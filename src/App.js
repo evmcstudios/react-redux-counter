@@ -12,18 +12,7 @@ class App extends Component {
        }
 
 
-       onAgeUp = () => {
 
-
-           this.setState({
-               ...this.state,
-               age: ++this.state.age
-
-           });
-
-
-
-       }
 
        onAgeDown = () => {
 
