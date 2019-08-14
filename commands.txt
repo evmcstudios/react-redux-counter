@@ -1,0 +1,3 @@
+C:\>Taskkill /PID 14324 /F
+
+npm start

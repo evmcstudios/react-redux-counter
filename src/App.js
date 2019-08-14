@@ -1,26 +1,79 @@
-import React from 'react';
+import React, { Component } from "react";
 import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    /*   state = {
+
+           age: 21
+
+       }
+
+
+       onAgeUp = () => {
+
+
+           this.setState({
+               ...this.state,
+               age: ++this.state.age
+
+           });
+
+
+
+       }
+
+       onAgeDown = () => {
+
+        this.setState({
+                       ...this.state,
+                       age: --this.state.age
+
+                   });
+
+
+       }
+       */
+
+
+        render() {
+
+          return (
+            <div className="App">
+              <header className="App-header">
+                  <div onClick={ this.props.onAgeUp }  className="Button">Add + <span></span></div>
+                  <div className="age">{this.props.one.age}</div>
+                  <div  onClick={ this.props.onAgeDown }  className="Button">Substract - <span></span></div>
+              </header>
+            </div>
+          );
+        }
+
 }
 
-export default App;
+const mapStateToProps = (state) => {
+
+    return {
+
+         ...state
+
+    }
+
+
+
+}
+
+
+const mapDispachToProps = (dispach) => {
+    return {
+
+        onAgeUp: () => dispach({ type: 'AGE_UP' }),
+        onAgeDown: () => dispach({ type: 'AGE_DOWN' })
+
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispachToProps)(App);
