@@ -1,4 +1,5 @@
 pipeline {
+    agent none
     tools {
     nodejs 'default-nodejs'
     }
