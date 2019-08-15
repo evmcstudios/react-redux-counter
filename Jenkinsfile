@@ -1,23 +1,10 @@
 pipeline {
-    agent none
-    tools {
-    nodejs 'default-nodejs'
-    }
+    agent { docker { image 'node:8' } }
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                script {
-                  sh 'npm install'
-                }
+                sh 'npm --version'
             }
         }
-        stage('Test') {
-            steps {
-                script {
-                  sh 'npm run test'
-                }
-            }
-        }
-
     }
 }
