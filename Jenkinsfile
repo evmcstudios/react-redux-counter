@@ -1,12 +1,10 @@
 pipeline {
-  agent any
-
-  stages {
-    stage('build user') {
-      steps { 
-          sh 'whoami';
-          sh 'echo test'
-      }
+    agent { docker { image 'node:8' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'npm --version'
+            }
+        }
     }
-  }
 }
