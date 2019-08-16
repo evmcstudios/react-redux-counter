@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh 'sudo npm install --unsafe-perm'
+                sh 'npm install --unsafe-perm'
             }
         }
         stage('Test') {
