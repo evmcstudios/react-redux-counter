@@ -8,7 +8,7 @@ pipeline {
                 sh "hostname"
                 sh "uptime"
                 sudo whoami
-                whoami
+                 
             }
         }
     }
