@@ -1,15 +1,13 @@
 pipeline {
-    agent { label 'master' }
-    stages {
-        stage('build') {
-            steps {
-                echo "Hello World!"
-                sh "echo Hello from the shell"
-                sh "hostname"
-                sh "uptime"
-                sudo whoami
-                 
-            }
+  agent any
+
+  stages {
+    stage('build user') {
+      steps {
+        wrap([$class: 'BuildUser']) {
+          sh 'echo "${BUILD_USER}"'
         }
+      }
     }
+  }
 }
