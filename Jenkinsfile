@@ -6,6 +6,14 @@ pipeline {
                 sh 'npm --version'
             }
         }
+        
+        stage('clean') {
+            
+            steps {
+              sh 'npm cache clear --force'   
+            }
+            
+        }
         stage('Install') {
             steps {
                 sh 'npm install'
