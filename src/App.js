@@ -23,9 +23,9 @@ class App extends Component {
           return (
             <div className="App">
               <header className="App-header">
-                  <div onClick={ this.props.onAgeUp }  className="Button">Add ++ <span></span></div>
+                  <div onClick={ this.props.onAgeUp }  className="Button">Addz ++ <span></span></div>
                   <div className="age">{this.props.one.age}</div>
-                  <div  onClick={ this.props.onAgeDown }  className="Button">Substract -- <span></span></div>
+                  <div  onClick={ this.props.onAgeDown }  className="Button">Substractz -- <span></span></div>
               </header>
             </div>
           );
